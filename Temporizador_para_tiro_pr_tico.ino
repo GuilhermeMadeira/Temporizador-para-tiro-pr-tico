@@ -1,5 +1,7 @@
 #define TesteCampainha 7 //Aciona campainha ao apertar o botão de teste
-#define Tempo8 4 //Tempo de inicio e fim de 10 segundos
+#define Tempo8 2 //Tempo de inicio e fim de 8 segundos
+#define Tempo10 4 //Tempo de inicio e fim de 10 segundos
+#define Tempo30 13 //Tempo de inicio e fim de 30 segundos
 #define StandBy 12 //Aciona o LED verde identificando que não esta contando tempo
 #define Campainha 8 //Aciona a campainha no inicio e no fim da contagem de tempo
 void ContaTempo();
@@ -9,6 +11,8 @@ int AcionaTempo = 0;
 void setup() {
   pinMode(TesteCampainha,INPUT);
   pinMode(Tempo8,INPUT);
+  pinMode(Tempo10,INPUT);
+  pinMode(Tempo30,INPUT);
   pinMode(StandBy,OUTPUT);
   pinMode(Campainha,OUTPUT);
   // initialize serial communication at 9600 bits per second:
@@ -21,6 +25,8 @@ void loop() {
 
 int  botao1 = digitalRead(TesteCampainha);
 int  botao2 = digitalRead(Tempo8);
+int  botao3 = digitalRead(Tempo10);
+int  botao4 = digitalRead(Tempo30);
 
 //Aciona campainha ao apertar o botão para demonstrar ao atirador qual é o som a se seguir
   if(botao1 == HIGH){ 
